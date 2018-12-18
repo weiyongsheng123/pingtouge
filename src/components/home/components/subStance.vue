@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="swiper">
     <h3 class="section-title text-center">发现好课</h3>
     <div class="hr"></div>
     <div id="myCarousel" class="carousel slide">
@@ -139,88 +139,101 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  .section-title
-    color: #8b617b
-    font-size: 18px
-    letter-spacing: 0.14px
-    font-weight: 600
-  .hr
-    background-color: #8b617b!important
-    font-weight: 400
-    height: 2px
-    margin: auto
-    width: 100px
-    background-color: rgb(46, 46, 46)
-  #myCarousel
-    width: 44%
-    height: 365px
-    margin-left: 5%
-    margin-top: 30px
-    cursor: pointer
-    display: inline-block
-    position: relative
-    .carousel-indicators
-      bottom: 10px
-      li
-        margin: 0 10px
-    .carousel-inner
-      height: 100%
-      .item
-        width: 100%
+  .swiper
+    padding-bottom: 15px
+    .section-title
+      color: #8b617b
+      font-size: 18px
+      letter-spacing: 0.14px
+      font-weight: 600
+    .hr
+      background-color: #8b617b!important
+      font-weight: 400
+      height: 2px
+      margin: auto
+      width: 100px
+      background-color: rgb(46, 46, 46)
+    #myCarousel
+      width: 44%
+      height: 365px
+      margin-left: 5%
+      margin-top: 30px
+      cursor: pointer
+      display: inline-block
+      position: relative
+      .carousel-indicators
+        bottom: 10px
+        li
+          margin: 0 10px
+      .carousel-inner
         height: 100%
-        img
+        box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, .2)
+        border-radius: 16px
+        .item
           width: 100%
           height: 100%
-        .carousel-caption
+          border-radius: 16px
+          img
+            width: 100%
+            height: 100%
+            border-radius: 16px
+          .carousel-caption
+            width: 100%
+            height: 25%
+            position: absolute
+            left: 0
+            right: 0
+            bottom: 0
+            background: rgba(0,0,0,.4)
+            font-size: 18px
+            line-height: 34px
+            font-weight: 500
+            user-select: none
+            text-align: center
+            box-sizing: border-box
+            padding-bottom: 10px
+      .left.carousel-control
+        border-radius: 16px 0 0 16px
+      .right.carousel-control
+        border-radius: 0 16px 16px 0
+    .lectureList
+      display: inline-block
+      width: 50%
+      height: 365px
+      overflow: hidden
+      .cardDetail
+        float: left
+        width: 40%
+        height: 162px
+        margin: 0 5% 35px !important
+        box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, .2)
+        border-radius: 10px
+        cursor: pointer
+        .v-card__text
           width: 100%
-          height: 25%
-          position: absolute
-          left: 0
-          right: 0
-          bottom: 0
-          background: rgba(0,0,0,.4)
-          font-size: 18px
-          line-height: 34px
-          font-weight: 500
-          user-select: none
-          text-align: center
-          box-sizing: border-box
-          padding-bottom: 10px
-  .lectureList
-    display: inline-block
-    width: 50%
-    height: 365px
-    overflow: hidden
-    .cardDetail
-      float: left
-      width: 40%
-      height: 162px
-      margin: 0 5% 35px !important
-      .v-card__text
-        width: 100%
-        height: 40px
-        padding: 0
-        padding-top: 0 !important
-        h5
-          margin: 0
+          height: 40px
           padding: 0
-          font-size: 12px !important
-          font-weight: bold
-          text-align: center
-        .v-btn
-          width: 30px
-          height: 30px
-      .v-responsive
-        height: 122px
-        .v-responsive__content
-          div
+          padding-top: 0 !important
+          h5
+            margin: 0
+            padding: 0
             font-size: 12px !important
-            display: block !important
-            padding-top: 55px
-            background-color: rgba(245, 124, 0, .5) !important
-            span
-              display: block
-              height: 30px
-              line-height: 30px
-              vertical-align: middle
+            font-weight: bold
+            text-align: center
+          .v-btn
+            width: 30px
+            height: 30px
+        .v-responsive
+          height: 122px
+          .v-responsive__content
+            div
+              font-size: 12px !important
+              display: block !important
+              padding-top: 55px
+              background-color: rgba(245, 124, 0, .5) !important
+              span
+                display: block
+                height: 30px
+                line-height: 30px
+                vertical-align: middle
 </style>

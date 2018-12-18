@@ -43,7 +43,7 @@ export default {
   data () {
     return {
       isShow: false,
-      colors: ['red', 'green', 'yellow', 'blue'],
+      colors: ['red', 'green', 'yellow', 'blue','pink','purple','gray','white'],
       navData: {
         home: {
           path: '/',
@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     changeColor () {
-      const index = Math.floor(Math.random()*4)
+      const index = Math.floor(Math.random()*8)
       this.$refs.color.style.color = this.colors[index]
     },
     showList () {
@@ -130,10 +130,14 @@ export default {
     bottom: 0
     right: 0
     left: 0
-    z-index: 99
+    z-index: 999
     height: 50px
     .navbar
       margin-bottom: 0px
+      background: #191a1c
+      color: #fff
+  .dropdown-menu
+    background: #191a1c
   .navbar-nav>li a
     color: #777
     text-decoration: none

@@ -115,50 +115,52 @@
 </script>
 
 <style lang="stylus">
-  .section-title
-    color: #8b617b
-    font-size: 18px
-    letter-spacing: 0.14px
-    font-weight: 600
-  .hr
-    background-color: #8b617b!important
-    font-weight: 400
-    height: 2px
-    margin: auto
-    width: 100px
-    background-color: rgb(46, 46, 46)
-  #dituContent
-    width: 50% !important
-    height: 400px
-    border: #ccc solid 1px
-    margin: auto
-    margin-top: 20px
-    text-align: center
-    .BMap_cpyCtrl.anchorBL
-      display: none
-    .iw_poi_title
-      color:#CC5522
-      font-size:14px
-      font-weight:bold
-      overflow:hidden
-      padding-right:13px
-      white-space:nowrap
-    .iw_poi_content
-      font:12px arial,sans-serif
-      overflow:visible
-      padding-top:4px
-      white-space:-moz-pre-wrap
-      word-wrap:break-word
-    .BMap_Marker.BMap_noprint
-      width: 40px !important
-      height: 40px !important
-      background: url(https://pic.52112.com/icon/256/20150602/718/1230485.png) !important
-      background-size: 40px 40px !important
-      background-repeat: no-repeat !important
-      margin-top: -10px !important
-      margin-left: -10px !important
-    .BMapLabel
-      max-width: none
   .companyMap
     background: rgba(221, 221, 221, .2)
+    padding: 5px 0
+    .section-title
+      color: #8b617b
+      font-size: 18px
+      letter-spacing: 0.14px
+      font-weight: 600
+    .hr
+      background-color: #8b617b !important
+      font-weight: 400
+      height: 2px
+      margin: auto
+      width: 100px
+      background-color: rgb(46, 46, 46)
+    #dituContent
+      width: 50% !important
+      height: 400px
+      border: #ccc solid 1px
+      margin: auto
+      margin-top: 25px
+      margin-bottom: 20px
+      text-align: center
+      .BMap_cpyCtrl.anchorBL
+        display: none
+      .iw_poi_title
+        color:#CC5522
+        font-size:14px
+        font-weight:bold
+        overflow:hidden
+        padding-right:13px
+        white-space:nowrap
+      .iw_poi_content
+        font:12px arial,sans-serif
+        overflow:visible
+        padding-top:4px
+        white-space:-moz-pre-wrap
+        word-wrap:break-word
+      .BMap_Marker.BMap_noprint
+        width: 40px !important
+        height: 40px !important
+        background: url(https://pic.52112.com/icon/256/20150602/718/1230485.png) !important
+        background-size: 40px 40px !important
+        background-repeat: no-repeat !important
+        margin-top: -10px !important
+        margin-left: -10px !important
+      .BMapLabel
+        max-width: none
 </style>
