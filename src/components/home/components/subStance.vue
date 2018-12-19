@@ -43,6 +43,7 @@
                 class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
                 style="height: 100%;"
               >
+                <div class="placeholder"></div>
                 <span>
                   <v-icon>query_builder</v-icon>&nbsp;讲座时长：{{item.timeLength}}
                 </span>
@@ -141,6 +142,7 @@ export default {
 <style lang="stylus" scoped>
   .swiper
     padding-bottom: 15px
+    clear: both
     .section-title
       color: #8b617b
       font-size: 18px
@@ -229,11 +231,15 @@ export default {
             div
               font-size: 12px !important
               display: block !important
-              padding-top: 55px
+              box-sizing: border-box
               background-color: rgba(245, 124, 0, .5) !important
               span
                 display: block
                 height: 30px
                 line-height: 30px
                 vertical-align: middle
+              .placeholder
+                width: 100%
+                height: 55px
+                background-color: transparent !important
 </style>

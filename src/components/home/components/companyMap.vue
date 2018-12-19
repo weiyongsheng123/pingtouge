@@ -116,8 +116,9 @@
 
 <style lang="stylus">
   .companyMap
-    background: rgba(221, 221, 221, .2)
+    background: rgba(221, 221, 221, .1)
     padding: 5px 0
+    clear: both
     .section-title
       color: #8b617b
       font-size: 18px

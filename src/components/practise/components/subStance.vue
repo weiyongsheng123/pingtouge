@@ -1,21 +1,17 @@
 <template>
-  <div class="head-nav">
-    这里是训练营页面
+  <div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'subStance',
-  data () {
-    return {
-      //
-    }
+  data: () => ({
+
+    })
   }
-}
 </script>
 
-<style lang="stylus" scoped>
-  .head-nav
-    font-size: 4rem
+<style scoped>
+  
 </style>

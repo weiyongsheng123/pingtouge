@@ -3,27 +3,12 @@
     <h3 class="section-title text-center">课程特色</h3>
     <div class="hr"></div>
     <div class="list">
-      <section>
-        <span class="iconfont">&#xe643;</span>
+      <section v-for="(item,index) in classSpecial" :key="index">
+        <span class="iconfont" v-html="item.icon"></span>
         <div class="desc">
-          <h4>硅谷一线企业工程师授课</h4>
-          <p>新鲜的求职经验，大公司的招聘标准，面试官的经验分享</p>
+          <h4>{{item.title}}</h4>
+          <p>{{item.desc}}</p>
         </div>
-      </section>
-      <section>
-        <span class="iconfont">&#xe8bb;</span>
-      </section>
-      <section>
-        <span class="iconfont">&#xe617;</span>
-      </section>
-      <section>
-        <span class="iconfont">&#xe66f;</span>
-      </section>
-      <section>
-        <span class="iconfont">&#xe60a;</span>
-      </section>
-      <section>
-        <span class="iconfont">&#xe6d6;</span>
       </section>
     </div>
   </div>
@@ -34,6 +19,38 @@ export default {
   name: 'classSpecial',
   data () {
     return {
+      classSpecial: [
+        {
+          icon: '&#xe643;',
+          title: '硅谷一线企业工程师授课',
+          desc: '新鲜的求职经验，大公司的招聘标准，面试官的经验分享'
+        },
+        {
+          icon: '&#xe8bb;',
+          title: '多课时精品直播课程',
+          desc: '定时定量，让你没有无从偷懒。每节课学员上座率超过95%，保证学习效果。'
+        },
+        {
+          icon: '&#xe617;',
+          title: '课堂实时答疑解惑',
+          desc: '课堂有问题？助教老师来帮你。搞定所有拦路虎，学到更多的知识。'
+        },
+        {
+          icon: '&#xe66f;',
+          title: '课后配套阶梯训练',
+          desc: '动手才是硬道理，边学边练效果好。知识掌握得更加踏实！'
+        },
+        {
+          icon: '&#xe60a;',
+          title: 'QA板块问答',
+          desc: '保证每个学员的问题，都得到专业解答。不会烦恼到底哪个才是正确答案。'
+        },
+        {
+          icon: '&#xe6d6;',
+          title: '找到一起找工作的朋友',
+          desc: '学员专属的QQ群，互助答疑，找人内推，认识朋友，求打鸡血。'
+        }
+      ]
     }
   }
 }
@@ -44,6 +61,8 @@ export default {
     width: 100%
     min-height: 350px
     overflow: hidden
+    padding-top: 5px
+    clear: both
     .section-title
       color: #8b617b
       font-size: 18px
@@ -59,7 +78,7 @@ export default {
     .list
       width: 100%
       box-sizing: border-box
-      padding: 10px 0px 0% 12%
+      padding: 14px 0px 0% 12%
       min-height: 300px
       section
         width: 28%
@@ -84,6 +103,7 @@ export default {
           text-align: left
           margin-left: 5%
           vertical-align: middle
+          overflow: hidden
           h4
             font-size: 22px
             font-weight: 300

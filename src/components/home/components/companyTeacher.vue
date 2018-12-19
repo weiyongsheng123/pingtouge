@@ -46,6 +46,8 @@
 <style lang="stylus">
   .ourTeachers
     padding: 5px 0
+    clear: both
+    background: rgba(221, 221, 221, .1)
     .section-title
       color: #8b617b
       font-size: 18px
