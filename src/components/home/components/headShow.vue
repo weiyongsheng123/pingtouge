@@ -42,23 +42,29 @@ export default {
   h1
     color: white
     font-size: 56px !important
-    font-family:'cyjianxk166a595d701ed0d' !important
+    font-family: 'cyjianxk166a595d701ed0d' !important
   h4
     font-size: 26px !important
   .commonBtn
     margin-top: 140px
-    .v-btn
-      background-color: transparent !important
-      color: #ffffff
-      border: 1px solid #ffffff
-      margin: 0px 20px
-      min-width: 120px
-      height: 40px
-      line-height: 21px
-      font-size: 15px
-      padding-left: 17px
-      padding-right: 17px
-  @media screen and (min-width: 300px) and (max-width: 600px)
+    a
+      &:hover
+        text-decoration: none
+      .v-btn
+        background-color: transparent !important
+        color: #ffffff
+        border: 1px solid #ffffff
+        margin: 0px 20px
+        min-width: 120px
+        height: 40px
+        line-height: 21px
+        font-size: 15px
+        padding-left: 17px
+        padding-right: 17px
+        text-decoration: none
+        &:hover
+          text-decoration: none
+  @media screen and (min-width: 300px) and (max-width: 500px)
     h1
       font-size: 36px !important
       font-family:'cyjianxk166a595d701ed0d' !important
