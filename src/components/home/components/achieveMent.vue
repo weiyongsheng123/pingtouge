@@ -296,6 +296,10 @@ export default {
 <style lang="stylus" scoped>
   .tableData >>> .column.text-xs-left
     text-align: center !important
+  .tableData >>> .v-input--hide-details.v-input--is-label-active.v-input--is-dirty
+    pointer-events: none
+    .v-input__append-inner
+      display: none
   .achieve
     width: 100%
     height: auto
