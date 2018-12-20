@@ -69,41 +69,32 @@ export default {
       letter-spacing: 0.14px
       font-weight: 600
     .hr
-      background-color: #8b617b!important
+      background-color: #8b617b !important
       font-weight: 400
       height: 2px
       margin: auto
       width: 100px
-      background-color: rgb(46, 46, 46)
     .list
       width: 100%
       box-sizing: border-box
-      padding: 14px 0px 0% 12%
       min-height: 300px
       section
-        width: 28%
-        height: 140px
         float: left
-        margin: 10px
-        margin-top: 15px
         .iconfont
-          font-size: 46px
-          line-height: 1.1
           border: 1px solid #eee
           color: #8b617b
           box-shadow: 7px 7px 20px 0 rgba(0,0,0,.15)
           border-radius: 50%
           box-sizing: border-box
-          padding: 12px
           float: left
         .desc
-          width: 70%
           height: 100%
           float: left
           text-align: left
           margin-left: 5%
           vertical-align: middle
           overflow: hidden
+          text-overflow: ellipsis
           h4
             font-size: 22px
             font-weight: 300
@@ -115,4 +106,32 @@ export default {
             font-family: 'Open Sans',Arial,sans-serif
             font-size: 14px
             font-weight: 700
+  @media screen and (min-width: 500px)
+    .list
+      padding: 14px 0px 0% 12%
+      section
+        width: 28%
+        height: 140px
+        margin: 10px
+        margin-top: 15px
+        .iconfont
+          font-size: 46px
+          line-height: 1.1
+          padding: 12px
+        .desc
+          width: 70%
+  @media screen and (min-width: 300px) and (max-width: 500px)
+    .list
+      padding: 14px 0 0 0
+      section
+        width: 100%
+        height: 120px
+        margin: 0px
+        padding-left: 6%
+        .iconfont
+          font-size: 36px
+          line-height: 1.1
+          padding: 10px
+        .desc
+          width: 75%
 </style>

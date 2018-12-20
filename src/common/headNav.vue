@@ -67,7 +67,7 @@
         small
         color="indigo"
       >
-        <v-icon  title="联系我们">account_circle</v-icon>
+        <v-icon  title="联系我们">comment</v-icon>
       </v-btn>
     </v-speed-dial>
   </v-card>
@@ -214,4 +214,7 @@ export default {
   @media screen and (min-width: 300px) and (max-width: 500px)
     .caret
       border-width: 10px 10px 0 10px
+    #create
+      bottom: 20px
+      right: 0px
 </style>

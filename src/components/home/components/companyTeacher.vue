@@ -37,6 +37,30 @@
           imgSrc: 'https://media-cdn.jiuzhang.com/avatars/zhoubotong.png',
           job: 'A公司全栈工程师',
           desc: 'AWS认证架构师，有多年云服务与容器集群的架构经验，曾参与设计多个初创公司的核心系统搭建。'
+        },
+        {
+          name: '贾老师',
+          imgSrc: 'https://media-cdn.jiuzhang.com/avatars/zhoubotong.png',
+          job: 'A公司全栈工程师',
+          desc: 'AWS认证架构师，有多年云服务与容器集群的架构经验，曾参与设计多个初创公司的核心系统搭建。'
+        },
+        {
+          name: '贾老师',
+          imgSrc: 'https://media-cdn.jiuzhang.com/avatars/zhoubotong.png',
+          job: 'A公司全栈工程师',
+          desc: 'AWS认证架构师，有多年云服务与容器集群的架构经验，曾参与设计多个初创公司的核心系统搭建。'
+        },
+        {
+          name: '贾老师',
+          imgSrc: 'https://media-cdn.jiuzhang.com/avatars/zhoubotong.png',
+          job: 'A公司全栈工程师',
+          desc: 'AWS认证架构师，有多年云服务与容器集群的架构经验，曾参与设计多个初创公司的核心系统搭建。'
+        },
+        {
+          name: '贾老师',
+          imgSrc: 'https://media-cdn.jiuzhang.com/avatars/zhoubotong.png',
+          job: 'A公司全栈工程师',
+          desc: 'AWS认证架构师，有多年云服务与容器集群的架构经验，曾参与设计多个初创公司的核心系统搭建。'
         }
       ]
     })
@@ -70,17 +94,13 @@
         padding: 30px 7%
         box-sizing: border-box
         li
-          width: 20%
-          min-height: 375px
           float: left
           list-style: none
           border: 1px solid #eee
-          margin: 10px 2.5%
-          margin-bottom: 30px
           text-align: center
           border-radius: .375rem
           box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, .2)
-          boxing-sizing: border-box
+          box-sizing: border-box
           padding: 10px
           h3
             font-size: 18px
@@ -95,8 +115,26 @@
             font-size: 14px
             color: #333
           img
-            width: 60%
             height: 100px
             margin-top: -30px
             border-radius: 50%
+  @media screen and (min-width: 500px)
+    .teachers
+      ul
+        li
+          width: 20%
+          min-height: 375px
+          margin: 10px 2.5%
+          margin-bottom: 30px
+          img
+            width: 60%
+  @media screen and (min-width: 300px) and (max-width: 500px)
+    .teachers
+      ul
+        li
+          width: 80%
+          min-height: 250px
+          margin: 20px 10%
+          img
+            width: 50%
 </style>

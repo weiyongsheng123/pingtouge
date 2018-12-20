@@ -85,7 +85,6 @@
     min-height: 450px
     overflow: hidden
     box-sizing: border-box
-    padding: 15px
     background: rgba(221, 221, 221, .1)
     clear: both
     .section-title
@@ -102,23 +101,16 @@
       width: 100px
       background-color: rgb(46, 46, 46)
     .layout.row.wrap
-      width: 42%
-      margin-top: 25px
-      padding: 10px
       float: left
       .flex
         .v-picker
-          width: 80%
-          margin-left: 15%
           text-align: center
           box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, .2)
     .classes
-      width: 56%
       height: 375px
       float: left
       margin: 0
       margin-top: 35px
-      margin-left: 1%
       padding: 10px
       border: 1px solid #eee
       box-sizing: border-box
@@ -198,4 +190,32 @@
             font-size: 12px
             color: #99a2aa
             text-align: right
+  @media screen and (min-width: 500px)
+    .personDate
+      padding: 15px
+      .layout.row.wrap
+        width: 42%
+        margin-top: 25px
+        padding: 10px
+        .flex
+          .v-picker
+            width: 80%
+            margin-left: 15%
+      .classes
+        margin-left: 1%
+        width: 57%
+  @media screen and (min-width: 300px) and (max-width: 500px)
+    .personDate
+      padding: 0px
+      .layout.row.wrap
+        width: 100%
+        margin-top: 15px
+        padding: 0px
+        .flex
+          .v-picker
+            width: 90%
+            margin-left: 9%
+      .classes
+        margin-left: 0%
+        width: 100%
 </style>
