@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.0",
     "fastclick": "^1.0.6",
-    "jquery": "^2.1.1",
+    "jquery": "^2.2.4",
     "material-design-icons-iconfont": "^4.0.3",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",

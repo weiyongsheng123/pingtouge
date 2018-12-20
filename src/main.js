@@ -8,8 +8,8 @@ import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import BaiduMap from 'vue-baidu-map'
 import $ from 'jquery'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min.js'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.js'
 Vue.config.productionTip = false
 Vue.use(Vuetify)
 Vue.use(BaiduMap,{

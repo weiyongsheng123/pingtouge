@@ -50,7 +50,7 @@
 
 <script>
 export default {
-  name: "subStance",
+  name: "trainingCourse",
   data() {
     return {
       //
@@ -60,61 +60,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.head-nav {
-  font-size: 4rem;
-}
 
-.distance {
-  margin: 50px 0px 0px 0px;
-  font-size: 4rem;
-}
-
-.glyphicon {
-  color: rgb(56, 138, 196);
-  font-size: 50px;
-}
-
-.icon {
-  margin-top: 50px;
-}
-
-.subStanceFeatures1 {
-  position: absolute;
-  margin-left: 18%;
-}
-
-.subStanceFeatures2 {
-  position: absolute;
-  margin-left: 38%;
-}
-
-.subStanceFeatures3 {
-  position: absolute;
-  margin-left: 58%;
-}
-
-.subStanceFeatures4 {
-  position: absolute;
-  margin-left: 78%;
-}
-
-.subStanceFeaturesFont {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.subStanceFeaturesFont p {
-  font-size: 16px;
-  color: rgb(56, 138, 196);
-}
-
-.mainContent {
-  margin-top: 18%;
-}
-
-.jumbotronFont{
-  margin-top: 20px;
-  color: rgb(56, 138, 196);
-}
 </style>
