@@ -45,6 +45,7 @@
         <div class="shortHr"></div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -118,3 +119,4 @@ export default {
   color: rgb(56, 138, 196);
 }
 </style>
+

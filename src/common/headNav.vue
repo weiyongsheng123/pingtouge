@@ -31,6 +31,46 @@
       </nav>
     </div>
     <div class="seat"></div>
+    <v-card id="create">
+      <v-container fluid grid-list-md>
+      </v-container>
+      <v-speed-dial
+        v-model="fab"
+        :top="top"
+        :bottom="bottom"
+        :right="right"
+        :left="left"
+        :direction="direction"
+        :transition="transition"
+      >
+      <v-btn
+        slot="activator"
+        v-model="fab"
+        color="blue darken-2"
+        dark
+        fab
+      >
+        <v-icon class="moveTop">add</v-icon>
+        <v-icon class="moveTop">close</v-icon>
+      </v-btn>
+      <v-btn
+        fab
+        dark
+        small
+        color="green"
+      >
+        <v-icon>edit</v-icon>
+      </v-btn>
+      <v-btn
+        fab
+        dark
+        small
+        color="indigo"
+      >
+        <v-icon>account_circle</v-icon>
+      </v-btn>
+    </v-speed-dial>
+  </v-card>
   </div>
 </template>
 
@@ -87,7 +127,16 @@ export default {
           class: '',
           ul: []
         }
-      }
+      },
+      direction: 'top',
+      fab: true,
+      fling: false,
+      tabs: null,
+      top: false,
+      right: true,
+      bottom: true,
+      left: false,
+      transition: 'slide-y-reverse-transition'
     }
   },
   methods: {
@@ -136,6 +185,7 @@ export default {
       margin-bottom: 0px
       background: #191a1c
       color: #fff
+      border-color: #191a1c
   .dropdown-menu
     background: #191a1c
   .navbar-nav>li a
@@ -146,4 +196,19 @@ export default {
   .seat
     width: 100%
     height: 50px
+  #create
+    width: 0px
+    height: 0px
+    position: fixed
+    bottom: 30px
+    right: 20px
+    z-index: 999
+    .v-speed-dial
+      position: absolute
+      .v-btn
+        div
+          .moveTop
+            margin-top: -10px
+    .v-btn--floating
+      position: relative
 </style>

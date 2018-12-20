@@ -86,7 +86,8 @@
     overflow: hidden
     box-sizing: border-box
     padding: 15px
-    background: rgba(221, 221, 221, .2)
+    background: rgba(221, 221, 221, .1)
+    clear: both
     .section-title
       color: #8b617b
       font-size: 18px

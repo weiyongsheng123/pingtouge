@@ -6,7 +6,9 @@
     <person-date></person-date>
     <class-special></class-special>
     <company-teacher></company-teacher>
+    <achieve-ment></achieve-ment>
     <company-map></company-map>
+    <foot></foot>
   </div>
 </template>
 
@@ -15,9 +17,11 @@
   import headShow from './components/headShow'
   import subStance from './components/subStance'
   import companyMap from './components/companyMap'
+  import achieveMent from './components/achieveMent'
   import companyTeacher from './components/companyTeacher'
   import personDate from './components/personDate'
   import classSpecial from './components/classSpecial'
+  import foot from 'common/foot'
   export default {
     name: "Home",
     components: {
@@ -25,9 +29,11 @@
       headShow,
       subStance,
       personDate,
+      classSpecial,
+      achieveMent,
       companyTeacher,
       companyMap,
-      classSpecial
+      foot
     },
     data: () => ({
       componentName: 'home'
