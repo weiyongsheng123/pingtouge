@@ -39,13 +39,6 @@
       </div>
     </div>
 
-    <div class="mainContent">
-      <div class="jumbotron">
-        <h3 class="jumbotronFont">集训营课程</h3>
-        <div class="shortHr"></div>
-      </div>
-    </div>
-
   </div>
 </template>
 
@@ -71,7 +64,7 @@ export default {
 }
 
 .glyphicon {
-  color: rgb(56, 138, 196);
+  color:#8b617b;
   font-size: 50px;
 }
 
@@ -107,7 +100,7 @@ export default {
 
 .subStanceFeaturesFont p {
   font-size: 16px;
-  color: rgb(56, 138, 196);
+  color: #8b617b;
 }
 
 .mainContent {
@@ -116,7 +109,6 @@ export default {
 
 .jumbotronFont{
   margin-top: 20px;
-  color: rgb(56, 138, 196);
+  color: #8b617b;
 }
 </style>
-
