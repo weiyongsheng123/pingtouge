@@ -13,11 +13,11 @@
           <template slot="items" slot-scope="props">
             <td>{{ props.item.name }}</td>
             <td class="text-xs-center">{{ props.item.sex }}</td>
+            <td class="text-xs-center">{{ props.item.oldSalary }}</td>
+            <td class="text-xs-center">{{ props.item.newSalary }}</td>
             <td class="text-xs-center">{{ props.item.age }}</td>
             <td class="text-xs-center">{{ props.item.educate }}</td>
             <td class="text-xs-center">{{ props.item.locale }}</td>
-            <td class="text-xs-center">{{ props.item.oldSalary }}</td>
-            <td class="text-xs-center">{{ props.item.newSalary }}</td>
           </template>
         </v-data-table>
       </div>
@@ -44,11 +44,11 @@ export default {
             value: 'name'
           },
           { text: '性别', value: 'sex' },
+          { text: '培训前薪资', value: 'oldSalary' },
+          { text: '培训后薪资', value: 'newSalary' },
           { text: '年龄', value: 'age' },
           { text: '学历', value: 'educate' },
-          { text: '工作地点', value: 'locale' },
-          { text: '培训前薪资', value: 'oldSalary' },
-          { text: '培训后薪资', value: 'newSalary' }
+          { text: '工作地点', value: 'locale' }
         ],
         desserts: [
           {
@@ -296,10 +296,17 @@ export default {
 <style lang="stylus" scoped>
   .tableData >>> .column.text-xs-left
     text-align: center !important
+  .tableData >>> .v-datatable__actions__select
+    width: 110px
+  .tableData >>> .v-input--hide-details.v-input--is-label-active.v-input--is-dirty
+    pointer-events: none
+    .v-input__append-inner
+      display: none
   .achieve
     width: 100%
     height: auto
     clear: both
+    padding-top: 20px
     .section-title
       color: #8b617b
       font-size: 18px
@@ -314,8 +321,6 @@ export default {
       width: 100px
       background-color: rgb(46, 46, 46)
     .students
-      width: 60%
-      margin: 30px 4%
       float: left
       border: 1px solid #eee
       box-sizing: border-box
@@ -336,9 +341,6 @@ export default {
         width: 100%
         height: auto
     .famous
-      width: 29%
-      height: 390px
-      margin: 30px 2% 20px 0
       float: left
       border: 1px solid #eee
       box-sizing: border-box
@@ -357,7 +359,6 @@ export default {
           margin: 0 5px
       ul
         width: 100%
-        height: 365px
         margin: 0
         padding: 0
         overflow: auto
@@ -372,4 +373,24 @@ export default {
           img
             width: 100%
             height: 100%
+  @media screen and (min-width: 500px)
+    .students
+      width: 60%
+      margin: 30px 4%
+    .famous
+      width: 29%
+      height: 390px
+      margin: 30px 2% 20px 0
+      ul
+        height: 365px
+  @media screen and (min-width: 300px) and (max-width: 500px)
+    .students
+      width: 100%
+      margin: 30px 0
+    .famous
+      width: 100%
+      height: auto
+      margin: 10px 0 20px 0
+      ul
+        height: auto
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="allFoot">
     <footer class="foot">
-      <img src="../assets/logo.png" alt="平头哥">
+      <img src="../assets/pingtouge.png" alt="平头哥">
       <section>
         <p>
           <router-link to="/">
@@ -20,8 +20,8 @@
         </p>
       </section>
       <div>
-        <i class="iconfont">&#xe73c;</i>
-        <i class="iconfont">&#xe637;</i>
+        <a href="https://weibo.com/u/6891368842?topnav=1&wvr=6&topsug=1&is_all=1"><i class="iconfont weibo">&#xe73c;</i></a>
+        <i class="iconfont weixin">&#xe637;</i>
       </div>
     </footer>
   </div>
@@ -47,31 +47,20 @@
       position: absolute
       bottom: 0
       div
-        width: 100px
         height: 100%
         float: right
         text-align: center
         box-sizing: border-box
-        padding-top: 20px
         margin-right: 5%
-        i
-          cursor: pointer
-          font-size: 24px
-          margin: 0 10px
-          &:first-of-type
-            color: red
-          &:last-of-type
-            color: green
+        .weibo
+          color: red
+        .weixin
+          color: green
       img
-        width: 180px
-        height: 80px
         float: left
       section
-        width: 400px
-        height: 80px
         float: left
         box-sizing: border-box
-        padding-left: 20px
         p
           width: 100%
           height: 100%
@@ -79,9 +68,7 @@
           color: #fff
           text-align: left
           box-sizing: border-box
-          padding-top: 20px
           cursor: pointer
-          font-size: 12px
           font-weight: 400
           margin: 0
           span
@@ -98,4 +85,45 @@
             line-height: 10px
             border-right: 1px solid #fff
             margin:0 6px 0 2px
+  @media screen and (min-width: 500px)
+    .allFoot
+      .foot
+        img
+          width: 180px
+          height: 80px
+        section
+          width: 400px
+          height: 80px
+          padding-left: 20px
+          p
+            font-size: 12px
+            padding-top: 20px
+        div
+          width: 100px
+          padding-top: 20px
+          i
+            cursor: pointer
+            font-size: 24px
+            margin: 0 10px
+  @media screen and (min-width: 300px) and (max-width: 500px)
+    .allFoot
+      .foot
+        img
+          width: 90px
+          height: 80px
+        section
+          width: 200px
+          height: 80px
+          padding-left: 0px
+          p
+            font-size: 12px
+            transform: scale(0.9)
+            padding-top: 10px
+        div
+          width: 60px
+          padding-top: 40px
+          i
+            cursor: pointer
+            font-size: 16px
+            margin: 0 5px
 </style>

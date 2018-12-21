@@ -156,29 +156,22 @@ export default {
       width: 100px
       background-color: rgb(46, 46, 46)
     #myCarousel
-      width: 44%
-      height: 365px
-      margin-left: 5%
       margin-top: 30px
       cursor: pointer
       display: inline-block
       position: relative
       .carousel-indicators
-        bottom: 10px
         li
           margin: 0 10px
       .carousel-inner
         height: 100%
         box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, .2)
-        border-radius: 16px
         .item
           width: 100%
           height: 100%
-          border-radius: 16px
           img
             width: 100%
             height: 100%
-            border-radius: 16px
           .carousel-caption
             width: 100%
             height: 25%
@@ -194,13 +187,8 @@ export default {
             text-align: center
             box-sizing: border-box
             padding-bottom: 10px
-      .left.carousel-control
-        border-radius: 16px 0 0 16px
-      .right.carousel-control
-        border-radius: 0 16px 16px 0
     .lectureList
       display: inline-block
-      width: 50%
       height: 365px
       overflow: hidden
       .cardDetail
@@ -219,9 +207,10 @@ export default {
           h5
             margin: 0
             padding: 0
-            font-size: 12px !important
             font-weight: bold
             text-align: center
+            overflow: hidden
+            text-overflow: ellipsis
           .v-btn
             width: 30px
             height: 30px
@@ -232,7 +221,6 @@ export default {
               font-size: 12px !important
               display: block !important
               box-sizing: border-box
-              background-color: rgba(245, 124, 0, .5) !important
               span
                 display: block
                 height: 30px
@@ -240,6 +228,65 @@ export default {
                 vertical-align: middle
               .placeholder
                 width: 100%
-                height: 55px
                 background-color: transparent !important
+  @media screen and (min-width: 500px)
+    #myCarousel
+      width: 44%
+      height: 365px
+      margin-left: 5%
+      .carousel-indicators
+        bottom: 10px
+      .carousel-inner
+        border-radius: 16px
+        .item
+          border-radius: 16px
+          img
+            border-radius: 16px
+      .left.carousel-control
+        border-radius: 16px 0 0 16px
+      .right.carousel-control
+        border-radius: 0 16px 16px 0
+    .lectureList
+      width: 50%
+      .cardDetail
+        .v-card__text
+          h5
+            font-size: 12px !important
+        .v-responsive
+          .v-responsive__content
+            div
+              background-color: rgba(245, 124, 0, .5) !important
+              .placeholder
+                height: 55px
+  @media screen and (min-width: 300px) and (max-width: 500px)
+    #myCarousel
+      width: 100%
+      height: 265px
+      margin-left: 0
+      margin-right: 0
+      .carousel-indicators
+        bottom: 0px
+      .carousel-inner
+        .carousel-caption
+          padding-top: 5px
+    .lectureList
+      width: 100%
+      .cardDetail
+        .v-card__text
+          h5
+            transform: scale(0.9)
+            font-size: 12px !important
+            line-height: 1.5 !important
+        .v-responsive
+          .v-responsive__content
+            div
+              text-align: left
+              background-color: rgba(245, 124, 0, .7) !important
+              span
+                margin-left: -15px
+                transform: scale(0.8)
+                font-size: 12px !important
+                line-height: 1.1 !important
+              .placeholder
+                height: 5px
 </style>

@@ -132,7 +132,6 @@
       width: 100px
       background-color: rgb(46, 46, 46)
     #dituContent
-      width: 50% !important
       height: 400px
       border: #ccc solid 1px
       margin: auto
@@ -142,18 +141,18 @@
       .BMap_cpyCtrl.anchorBL
         display: none
       .iw_poi_title
-        color:#CC5522
-        font-size:14px
-        font-weight:bold
-        overflow:hidden
-        padding-right:13px
-        white-space:nowrap
+        color: #CC5522
+        font-size: 14px
+        font-weight: bold
+        overflow: hidden
+        padding-right: 13px
+        white-space: nowrap
       .iw_poi_content
         font:12px arial,sans-serif
-        overflow:visible
-        padding-top:4px
-        white-space:-moz-pre-wrap
-        word-wrap:break-word
+        overflow: visible
+        padding-top: 4px
+        white-space: -moz-pre-wrap
+        word-wrap: break-word
       .BMap_Marker.BMap_noprint
         width: 40px !important
         height: 40px !important
@@ -162,6 +161,16 @@
         background-repeat: no-repeat !important
         margin-top: -10px !important
         margin-left: -10px !important
+        color: red
       .BMapLabel
         max-width: none
+  @media screen and (min-width: 500px)
+    #dituContent
+      width: 50% !important
+  @media screen and (min-width: 300px) and (max-width: 500px)
+    #dituContent
+      width: 100% !important
+      .BMap_omCtrl.BMap_ieundefined.BMap_noprint.anchorBR.quad4
+        width: 100px !important
+        height: 100px !important
 </style>
