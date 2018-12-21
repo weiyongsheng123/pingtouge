@@ -1,5 +1,5 @@
 <template>
-  <div class="allFoot">
+  <div  @click="closeWechat" class="allFoot">
     <footer class="foot">
       <img src="../assets/pingtouge.png" alt="平头哥">
       <section>
@@ -19,9 +19,10 @@
           Copyright © 2013-京ICP备16004690号-1
         </p>
       </section>
-      <div>
+      <div class="link">
         <a href="https://weibo.com/u/6891368842?topnav=1&wvr=6&topsug=1&is_all=1"><i class="iconfont weibo">&#xe73c;</i></a>
-        <i class="iconfont weixin">&#xe637;</i>
+        <i class="iconfont weixin" @click.stop="showWechat">&#xe637;</i>
+        <div class="weixintu"></div>
       </div>
     </footer>
   </div>
@@ -31,8 +32,16 @@
   export default {
     name: 'foot',
     data: () => ({
-      
-    })
+    }),
+    methods: {
+      showWechat () {
+        $(".weixintu").toggle(function() {
+        })
+      },
+      closeWechat () {
+        $(".weixintu").hide("slow")
+      }
+    }
   }
 </script>
 
@@ -46,16 +55,32 @@
       background: #191a1c
       position: absolute
       bottom: 0
-      div
+      .link
         height: 100%
         float: right
         text-align: center
         box-sizing: border-box
         margin-right: 5%
+        position: relative
+        a
+          text-decoration: none
         .weibo
           color: red
+          user-select: none
         .weixin
           color: green
+          user-select: none
+        .weixintu
+          width: 100px
+          height: 100px
+          position: absolute
+          left: -100px
+          top: -50px
+          z-index: 999
+          display: none
+          background-image: url(../assets/wechat.jpg)
+          background-size: 100%
+          user-select: none
       img
         float: left
       section
@@ -98,7 +123,7 @@
           p
             font-size: 12px
             padding-top: 20px
-        div
+        .link
           width: 100px
           padding-top: 20px
           i
@@ -119,7 +144,7 @@
             font-size: 12px
             transform: scale(0.9)
             padding-top: 10px
-        div
+        .link
           width: 60px
           padding-top: 40px
           i

@@ -1,5 +1,5 @@
 <template>
-  <div class="companyMap">
+  <div class="companyMap" @click.stop="closeWechat">
     <h3 class="section-title text-center">我们在哪里</h3>
     <div class="hr"></div>
     <div style="width:697px;height:400px;border:#ccc solid 1px;" id="dituContent"></div>
@@ -13,6 +13,11 @@
     data () {
       return {
        
+      }
+    },
+    methods:{
+      closeWechat () {
+        $(".weixintu").hide("slow")
       }
     },
     mounted () {

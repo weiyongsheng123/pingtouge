@@ -13,25 +13,25 @@
     </v-parallax>
 
     <div class="icon">
-      <div class="subStanceFeatures1">
+      <div class="subStanceFeatures">
         <div class="subStanceFeaturesFont">
           <span class="glyphicon glyphicon-th-large btn-lg"></span>
           <p>一个月集训</p>
         </div>
       </div>
-      <div class="subStanceFeatures2">
+      <div class="subStanceFeatures">
         <div class="subStanceFeaturesFont">
           <span class="glyphicon glyphicon-user btn-lg"></span>
           <p>班主任监督练习</p>
         </div>
       </div>
-      <div class="subStanceFeatures3">
+      <div class="subStanceFeatures">
         <div class="subStanceFeaturesFont">
           <span class="glyphicon glyphicon-refresh btn-lg"></span>
           <p>毕业之后三个月可享受免费解疑</p>
         </div>
       </div>
-      <div class="subStanceFeatures4">
+      <div class="subStanceFeatures">
         <div class="subStanceFeaturesFont">
           <span class="glyphicon glyphicon-ok btn-lg"></span>
           <p>第一周免费试听</p>
@@ -53,7 +53,7 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
+<style scoped>
 .head-nav {
   font-size: 4rem;
 }
@@ -69,27 +69,20 @@ export default {
 }
 
 .icon {
-  margin-top: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  min-height: 150px
 }
 
-.subStanceFeatures1 {
-  position: absolute;
-  margin-left: 18%;
+.subStanceFeatures {
+  width: 15%;
+  margin-left: 4%;
+  margin-right: 4%;
+  float: left;
 }
 
-.subStanceFeatures2 {
-  position: absolute;
-  margin-left: 38%;
-}
-
-.subStanceFeatures3 {
-  position: absolute;
-  margin-left: 58%;
-}
-
-.subStanceFeatures4 {
-  position: absolute;
-  margin-left: 78%;
+.subStanceFeatures:first-of-type{
+  margin-left: 8%;
 }
 
 .subStanceFeaturesFont {
@@ -110,5 +103,11 @@ export default {
 .jumbotronFont{
   margin-top: 20px;
   color: #8b617b;
+}
+
+@media screen and (min-width: 300px) and (max-width: 500px){
+  .glyphicon.btn-lg {
+     font-size: 30px
+  }
 }
 </style>
