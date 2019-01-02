@@ -18,7 +18,7 @@
       foot
     },
     data: () => ({
-      componentName: 'recruit'
+      componentName: '平头哥招聘'
     })
   }
 </script>

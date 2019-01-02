@@ -18,7 +18,7 @@
       foot
     },
     data: () => ({
-      componentName: 'contactus'
+      componentName: '联系我们'
     })
   }
 </script>

@@ -18,7 +18,7 @@
       foot
     },
     data: () => ({
-      componentName: 'openclass'
+      componentName: '公开课'
     })
   }
 </script>

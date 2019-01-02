@@ -27,7 +27,7 @@
       foot
     },
     data: () => ({
-      componentName: 'practise'
+      componentName: '训练营'
     })
   }
 </script>

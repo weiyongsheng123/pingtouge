@@ -32,18 +32,7 @@ export default {
       NavigationList: []
     };
   },
-  methods: {},
-  created: function() {
-    this.$axios
-      .get("http://api.ptgeer.com/api/portal/navigation/all")
-      .then(NavigationListData => {
-        this.NavigationList = NavigationListData.data;
-        console.log(this.NavigationList);
-      })
-      .catch(NavigationListData => {
-        alert("失败");
-      });
-  }
+  methods: {}
 };
 </script>
 

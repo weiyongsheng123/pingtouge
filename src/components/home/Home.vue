@@ -36,7 +36,7 @@
       foot
     },
     data: () => ({
-      componentName: 'home'
+      componentName: '首页'
     })
   }
 </script>

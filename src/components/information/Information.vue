@@ -18,7 +18,7 @@
       foot
     },
     data: () => ({
-      componentName: 'information'
+      componentName: '平头哥资讯'
     })
   }
 </script>

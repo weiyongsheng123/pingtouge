@@ -20,21 +20,21 @@
           <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav">
               <li
-                v-for="(item,key,index) in navData"
+                v-for="(item,key,index) in navData1"
                 :key="index"
-                :class="item.class"
-                @mouseover="item.ul[0] && showList()"
-                @mouseout="item.ul[0] && hideList()"
+                :class="item.parentId && 'dropdown'"
+                @mouseover="item.parentId && showList()"
+                @mouseout="item.parentId && hideList()"
               >
-                <router-link :to="item.path">
-                  <a :href="item.link" class="dropdown-toggle" data-toggle="dropdown">
-                    {{item.content}}
-                    <b v-if="item.ul[0]" @touchstart="alerta" class="caret"></b>
+                <router-link :to="item.route">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    {{item.name}}
+                    <b v-if="item.parentId" @touchstart="alerta" class="caret"></b>
                   </a>
                 </router-link>
-                <ul class="dropdown-menu" v-if="item.ul[0]">
-                  <li v-for="(items,indexx) in item.ul" :key="indexx">
-                    <a :href="items[0]">{{items[1]}}</a>
+                <ul class="dropdown-menu" v-if="item.parentId">
+                  <li v-for="(items,key,indexx) in navData2" :key="indexx">
+                    <a :href="items.route">{{items.name}}</a>
                     <hr>
                   </li>
                 </ul>
@@ -90,6 +90,9 @@ export default {
         "gray",
         "white"
       ],
+      navData1: [],
+      navData2: [],
+      nowPage: 0,
       navData: {
         home: {
           path: "/",
@@ -109,18 +112,11 @@ export default {
           path: "/openclass",
           content: "公开课",
           link: "#",
-          class: "dropdown",
+          class: "",
           ul: [
             ["#", "大数据"],
-            ["#", "前端开发"],
-            ["#", "后端开发"],
             ["#", "数据库开发"]
-          ],
-          path: '/openclass',
-          content: '公开课',
-          link: '#',
-          class: 'dropdown',
-          ul: [['#','大数据'], ['#','数据库开发']]
+          ]
         },
         information: {
           path: "/information",
@@ -133,17 +129,7 @@ export default {
           path: "/recruit",
           content: "招聘信息",
           link: "#",
-          class: "dropdown",
-          ul: [
-            ["#", "市场/企业主管"],
-            ["#", "电话销售"],
-            ["#", "应届生/储备人才"],
-            ["#", "培训生"]
-          ],
-          path: '/recruit',
-          content: '招聘信息',
-          link: '#',
-          class: 'dropdown',
+          class: "",
           ul: []
         },
         contactus: {
@@ -164,9 +150,6 @@ export default {
       left: false,
       transition: "slide-y-reverse-transition"
     };
-    NavigationList: [];
-    HomeImagesList: [];
-    TeacherTeamList: [];
   },
   methods: {
     changeColor() {
@@ -191,31 +174,33 @@ export default {
         el.style.display = "block";
         this.isShow = true;
       }
+    },
+    handleShow (res) {
+      res = res.data
+      console.log(res)
+      for (let i=0;i<res.length;i++) {
+        if (res[i].parentId == 0){
+          this.navData1.push(res[i])
+        }
+        else if (res[i].parentId == 3){
+          this.navData2.push(res[i])
+        }
+        if (res[i].name == this.select){
+          this.nowPage = i
+        }
+      }
+      console.log(this.navData1)
+      console.log(this.navData2)
+      console.log(this.nowPage)
     }
   },
-  mounted() {
-    this.navData[this.select].class =
-      "active " + this.navData[this.select].class;
+  updated () {
+    $(".navbar-nav").find("li").eq(this.nowPage).addClass("active")
   },
-  created: function() {
+  created () {
     this.$axios
       .get("http://api.ptgeer.com/api/portal/navigation/all")
-      .then(NavigationListData => {
-        this.NavigationList = NavigationListData.data;
-        console.log(this.NavigationList);
-      })
-      .catch(NavigationListData => {
-        alert("失败");
-      });
-    this.$axios
-      .get("http://api.ptgeer.com/api/portal/navigation/queryTeacher")
-      .then(TeacherTeamData => {
-        this.TeacherTeamList = TeacherTeamData.data;
-        console.log(this.TeacherTeamList);
-      })
-      .catch(TeacherTeamData => {
-        alert(TeacherTeamData.data);
-      });
+      .then(this.handleShow)
   }
 };
 </script>

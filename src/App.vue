@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <v-app>
-      <v-content>
-        <router-view/>
-      </v-content>
-    </v-app>
+    <keep-alive>
+      <v-app>
+        <v-content>
+          <router-view/>
+        </v-content>
+      </v-app>
+    </keep-alive>
   </div>
 </template>
 
