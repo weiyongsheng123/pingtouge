@@ -104,7 +104,7 @@ export default {
           content: '公开课',
           link: '#',
           class: 'dropdown',
-          ul: [['#','大数据'], ['#','前端开发'], ['#','后端开发'], ['#','数据库开发']]
+          ul: [['#','大数据'], ['#','数据库开发']]
         },
         information: {
           path: '/information',
@@ -118,7 +118,7 @@ export default {
           content: '招聘信息',
           link: '#',
           class: 'dropdown',
-          ul: [['#','市场/企业主管'], ['#','电话销售'], ['#','应届生/储备人才'], ['#','培训生']]
+          ul: []
         },
         contactus: {
           path: '/contactus',

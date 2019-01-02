@@ -8,9 +8,11 @@ import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import BaiduMap from 'vue-baidu-map'
 import $ from 'jquery'
+import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 Vue.config.productionTip = false
+Vue.prototype.$axios = axios
 Vue.use(Vuetify)
 Vue.use(BaiduMap,{
   ak:"5bS8bGXOSk92t4gpnuGfml4SIv5H8aG6"
