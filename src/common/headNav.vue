@@ -115,7 +115,12 @@ export default {
             ["#", "前端开发"],
             ["#", "后端开发"],
             ["#", "数据库开发"]
-          ]
+          ],
+          path: '/openclass',
+          content: '公开课',
+          link: '#',
+          class: 'dropdown',
+          ul: [['#','大数据'], ['#','数据库开发']]
         },
         information: {
           path: "/information",
@@ -134,7 +139,12 @@ export default {
             ["#", "电话销售"],
             ["#", "应届生/储备人才"],
             ["#", "培训生"]
-          ]
+          ],
+          path: '/recruit',
+          content: '招聘信息',
+          link: '#',
+          class: 'dropdown',
+          ul: []
         },
         contactus: {
           path: "/contactus",
