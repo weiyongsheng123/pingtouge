@@ -11,6 +11,8 @@ import $ from 'jquery'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
+import axios from 'axios'
+Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 Vue.use(Vuetify)
