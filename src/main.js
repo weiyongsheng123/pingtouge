@@ -10,6 +10,8 @@ import BaiduMap from 'vue-baidu-map'
 import $ from 'jquery'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
+import axios from 'axios'
+Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 Vue.use(Vuetify)
 Vue.use(BaiduMap,{
