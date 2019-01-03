@@ -22,17 +22,17 @@
               <li
                 v-for="(item,key,index) in navData1"
                 :key="index"
-                :class="item.parentId && 'dropdown'"
-                @mouseover="item.parentId && showList()"
-                @mouseout="item.parentId && hideList()"
+                :class="item.newClass && 'dropdown'"
+                @mouseover="item.newClass && showList()"
+                @mouseout="item.newClass && hideList()"
               >
                 <router-link :to="item.route">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     {{item.name}}
-                    <b v-if="item.parentId" @touchstart="alerta" class="caret"></b>
+                    <b v-if="item.newClass" @touchstart="alerta" class="caret"></b>
                   </a>
                 </router-link>
-                <ul class="dropdown-menu" v-if="item.parentId">
+                <ul class="dropdown-menu" v-if="item.newClass">
                   <li v-for="(items,key,indexx) in navData2" :key="indexx">
                     <a :href="items.route">{{items.name}}</a>
                     <hr>
@@ -93,53 +93,6 @@ export default {
       navData1: [],
       navData2: [],
       nowPage: 0,
-      navData: {
-        home: {
-          path: "/",
-          content: "首页",
-          link: "#",
-          class: "",
-          ul: []
-        },
-        practise: {
-          path: "/practise",
-          content: "训练营",
-          link: "#",
-          class: "",
-          ul: []
-        },
-        openclass: {
-          path: "/openclass",
-          content: "公开课",
-          link: "#",
-          class: "",
-          ul: [
-            ["#", "大数据"],
-            ["#", "数据库开发"]
-          ]
-        },
-        information: {
-          path: "/information",
-          content: "平头哥资讯",
-          link: "#",
-          class: "",
-          ul: []
-        },
-        recruit: {
-          path: "/recruit",
-          content: "招聘信息",
-          link: "#",
-          class: "",
-          ul: []
-        },
-        contactus: {
-          path: "/contactus",
-          content: "联系我们",
-          link: "#",
-          class: "",
-          ul: []
-        }
-      },
       direction: "top",
       fab: true,
       fling: false,
@@ -177,29 +130,28 @@ export default {
     },
     handleShow (res) {
       res = res.data
-      console.log(res)
       for (let i=0;i<res.length;i++) {
         if (res[i].parentId == 0){
           this.navData1.push(res[i])
+          this.navData1[i].newClass = ''
         }
         else if (res[i].parentId == 3){
           this.navData2.push(res[i])
+          this.navData1[res[i].parentId].newClass = true
         }
+        
         if (res[i].name == this.select){
           this.nowPage = i
         }
       }
-      console.log(this.navData1)
-      console.log(this.navData2)
-      console.log(this.nowPage)
     }
   },
   updated () {
-    $(".navbar-nav").find("li").eq(this.nowPage).addClass("active")
+    $(".navbar-nav>li").eq(this.nowPage).addClass("active")
   },
-  created () {
+  mounted () {
     this.$axios
-      .get("http://api.ptgeer.com/api/portal/navigation/all")
+      .get("/api/portal/navigation/all")
       .then(this.handleShow)
   }
 };

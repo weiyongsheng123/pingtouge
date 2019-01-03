@@ -1,5 +1,5 @@
 <template>
-  <div  @click="closeWechat" class="allFoot">
+  <div @click="closeWechat" class="allFoot">
     <footer class="foot">
       <img src="../assets/pingtouge.png" alt="平头哥">
       <section>

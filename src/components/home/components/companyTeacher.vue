@@ -4,11 +4,11 @@
     <div class="hr"></div>
     <div class="teachers">
       <ul>
-        <li v-for="(item,index) in companyTeacher" :key="index">
-          <img :src="item.imgSrc">
-          <h3>{{item.name}}</h3>
-          <h4>{{item.job}}</h4>
-          <p>{{item.desc}}</p>
+        <li v-for="(item,index) in companyTeacher1" :key="index">
+          <img :src="item.teacherAvatar">
+          <h3>{{item.teacherName}}</h3>
+          <h4>{{item.teacherDuties}}</h4>
+          <p>{{item.teacherDetails}}</p>
         </li>
       </ul>
     </div>
@@ -19,51 +19,18 @@
   export default {
     name: "companyTeacher",
     data: () => ({
-      companyTeacher: [
-        {
-          name: '蔺老师',
-          imgSrc: 'https://media-cdn.jiuzhang.com/avatars/guojing2.png',
-          job: '大数据数据库开发工程师',
-          desc: '曾就职于超过2家硅谷顶尖IT企业,  北美和国内顶尖IT企业offer数10+，面试人数超过200人。前算法竞赛国家集训队员，刷题数目超过 3000 道'
-        },
-        {
-          name: '刘老师',
-          imgSrc: 'https://media-cdn.jiuzhang.com/avatars/timgLZQTAQ7P.jpg',
-          job: '人事',
-          desc: '负责公司的招聘及运营'
-        },
-        {
-          name: '贾老师',
-          imgSrc: 'https://media-cdn.jiuzhang.com/avatars/zhoubotong.png',
-          job: 'A公司全栈工程师',
-          desc: 'AWS认证架构师，有多年云服务与容器集群的架构经验，曾参与设计多个初创公司的核心系统搭建。'
-        },
-        {
-          name: '贾老师',
-          imgSrc: 'https://media-cdn.jiuzhang.com/avatars/zhoubotong.png',
-          job: 'A公司全栈工程师',
-          desc: 'AWS认证架构师，有多年云服务与容器集群的架构经验，曾参与设计多个初创公司的核心系统搭建。'
-        },
-        {
-          name: '贾老师',
-          imgSrc: 'https://media-cdn.jiuzhang.com/avatars/zhoubotong.png',
-          job: 'A公司全栈工程师',
-          desc: 'AWS认证架构师，有多年云服务与容器集群的架构经验，曾参与设计多个初创公司的核心系统搭建。'
-        },
-        {
-          name: '贾老师',
-          imgSrc: 'https://media-cdn.jiuzhang.com/avatars/zhoubotong.png',
-          job: 'A公司全栈工程师',
-          desc: 'AWS认证架构师，有多年云服务与容器集群的架构经验，曾参与设计多个初创公司的核心系统搭建。'
-        },
-        {
-          name: '贾老师',
-          imgSrc: 'https://media-cdn.jiuzhang.com/avatars/zhoubotong.png',
-          job: 'A公司全栈工程师',
-          desc: 'AWS认证架构师，有多年云服务与容器集群的架构经验，曾参与设计多个初创公司的核心系统搭建。'
-        }
-      ]
-    })
+      companyTeacher1: []
+    }),
+    methods: {
+      handleShow (res) {
+        this.companyTeacher1 = res.data
+      }
+    },
+    mounted () {
+      this.$axios
+        .get("/api/portal/navigation/queryTeacher")
+        .then(this.handleShow)
+    }
   }
 </script>
 

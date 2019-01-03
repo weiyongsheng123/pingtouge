@@ -12,10 +12,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-         target: 'http://localhost:82',
-         pathRewrite: {
-           '^api': '/api'
-         }
+         target: 'http://api.ptgeer.com',
+         changeOrigin: true
       }
     },
 
