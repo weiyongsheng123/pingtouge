@@ -49,6 +49,7 @@
   .allFoot
     width: 100%
     height: 80px
+    clear: both
     .foot
       width: 100%
       height: 80px
