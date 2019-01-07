@@ -81,7 +81,8 @@ export default {
 
 <style lang="stylus" scoped>
   .head-nav
-    padding: 10px 0px
+    padding: 20px 0px
+    padding-top: 40px
     width: 100%
     min-height: 400px
     .title
