@@ -10,6 +10,7 @@
       <ul>
         <li>
           <div class="imgDesc">
+            <span class="tag">正在进行</span>
             <img src="https://open-image.nosdn.127.net/4df121443d0f421482f7fac8457d8a23.jpg?imageView&thumbnail=540y300&enlarge=1&quality=85">
           </div>
           <div class="desc">
@@ -20,6 +21,7 @@
         </li>
         <li>
           <div class="imgDesc">
+            <span class="tag">正在进行</span>
             <img src="https://open-image.nosdn.127.net/70296bf3722d41c0bb65889d10193a2b.jpg?imageView&thumbnail=540y300&enlarge=1&quality=85">
           </div>
           <div class="desc">
@@ -30,6 +32,7 @@
         </li>
         <li>
           <div class="imgDesc">
+            <span class="tag" style="background: #FFA54F	">尚未开始</span>
             <img src="https://open-image.nosdn.127.net/67b91094f12446979232837b47f705f4.jpg?imageView&thumbnail=540y300&enlarge=1&quality=85">
           </div>
           <div class="desc">
@@ -40,6 +43,7 @@
         </li>
         <li>
           <div class="imgDesc">
+            <span class="tag">正在进行</span>
             <img src="https://oimagec2.ydstatic.com/image?url=http://cms-bucket.nosdn.127.net/2018/12/24/e6c2eca125c44bc3b16732159b3f416b.jpeg&w=380&h=268&cw=380&ch=268&fill=0&sbc=0&quality=95&cgra=TOP_CENTER&product=open">
           </div>
           <div class="desc">
@@ -50,6 +54,7 @@
         </li>
         <li>
           <div class="imgDesc">
+            <span class="tag" style="background-color: red">已完结</span>
             <img src="https://open-image.nosdn.127.net/67b91094f12446979232837b47f705f4.jpg?imageView&thumbnail=540y300&enlarge=1&quality=85">
           </div>
           <div class="desc">
@@ -128,6 +133,20 @@ export default {
             width: 100%
             height: 150px
             overflow: hidden
+            position: relative
+            .tag
+              position: absolute
+              right: 0px
+              top: 0px
+              height: 20px
+              z-index: 99
+              font-size: 12px
+              line-height: 1.1
+              text-align: center
+              vertical-align: middle
+              padding: 3px
+              color: #fff
+              background: #64c878
             img
               width: 100%
               height: 150px
