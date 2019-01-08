@@ -8,33 +8,33 @@
     </div>
     <div class="data">
       <div class="input-container">
-        <input type="text" name="name" required/>
+        <input type="text" name="name" @focus="choose" @blur="unchoose" required/>
         <label for="name">姓名</label>
         <div class="bottom-line"></div>
       </div>
       <div class="input-container">
-        <input type="radio" name="sex" class="select" value="男"/>男
-        <input type="radio" name="sex" class="select" value="女"/>女
+        <input type="radio" name="sex" class="select" value="男" @focus="choose" @blur="unchoose"/>男
+        <input type="radio" name="sex" class="select" value="女" @focus="choose" @blur="unchoose"/>女
         <label for="sex">性别</label>
         <div class="bottom-line"></div>
       </div>
       <div class="input-container">
-        <input type="text" name="school" required/>
+        <input type="text" name="school" required @focus="choose" @blur="unchoose"/>
         <label for="school">就读学校</label>
         <div class="bottom-line"></div>
       </div>
       <div class="input-container">
-        <input type="text" name="phone" required/>
+        <input type="text" name="phone" required @focus="choose" @blur="unchoose"/>
         <label for="phone">联系方式</label>
         <div class="bottom-line"></div>
       </div>
       <div class="input-container">
-        <input type="text" name="date" required/>
+        <input type="text" name="date" required @focus="choose" @blur="unchoose"/>
         <label for="date">前来时间</label>
         <div class="bottom-line"></div>
       </div>
       <div class="input-container">
-        <input type="text" name="experience" list="experlist" required/>
+        <input type="text" name="experience" list="experlist" required @focus="choose" @blur="unchoose"/>
         <label for="experience">工作经验</label>
         <div class="bottom-line"></div>
         <datalist id="experlist">
@@ -46,12 +46,12 @@
         </datalist>
       </div>
       <div class="input-container">
-        <input type="text" name="birthday" required/>
+        <input type="text" name="birthday" required @focus="choose" @blur="unchoose"/>
         <label for="birthday">出生年月</label>
         <div class="bottom-line"></div>
       </div>
       <div class="input-container">
-        <input type="text" name="classchoose" list="classlist" required/>
+        <input type="text" name="classchoose" list="classlist" required @focus="choose" @blur="unchoose"/>
         <label for="classchoose">兴趣课程</label>
         <datalist id="classlist">
           <option value="大数据"></option>
@@ -61,7 +61,7 @@
         <div class="bottom-line"></div>
       </div>
       <div class="input-container">
-        <input type="file" name="file" class="file" required/>
+        <input type="file" name="file" class="file" required @focus="choose" @blur="unchoose"/>
         <label for="file">附件</label>
         <div class="bottom-line"></div>
       </div>
@@ -79,7 +79,17 @@
   export default {
     name: 'personData',
     data: () => ({
-    })
+    }),
+    methods: {
+      choose (el) {
+        var el = el.currentTarget || el.srcElement
+        el.parentElement.style['box-shadow']="-10px -10px 10px #707070"
+      },
+      unchoose (el) {
+        var el = el.currentTarget || el.srcElement
+        el.parentElement.style['box-shadow']="10px 10px 10px #707070"
+      }
+    }
   }
 </script>
 
@@ -93,11 +103,9 @@
       width: 94%
       margin-left: 2%
       .iconfont
-        font-size: 65px
         color: #707070
       .hr
         display: inline-block
-        width: 92%
         height: 4px
         background-color: #707070
         position: relative
@@ -108,19 +116,13 @@
     .data
       padding-top: 30px
       .input-container
-        width: 20%
-        height: 50px
-        margin-top: 30px
-        margin-bottom: 30px
-        margin-left: 20%
-        font-size: 23px
+        padding-left: 1px
         line-height: 1.0
+        border-right: 3px solid #707070
+        box-shadow: 10px 10px 10px #707070
         display: inline-block
         position: relative
-        &:nth-of-type(odd)
-          margin-left: 25%
-        &:nth-of-type(even)
-          margin-left: 10%
+        background-color: #fff
         .bottom-line
           width: 100%
           height: 2px
@@ -136,16 +138,19 @@
           outline: none
           width: 100%
           height: 100%
-          font-size: 23px
+          font-size: 21px
           line-height: 1.0
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
           &:focus
             + label
               transition: all 0.75s
-              transform: translate(-45px,-30px)
+              transform: translate(-40px,-30px)
           &:valid
             + label
               transition: all 0.75s
-              transform: translate(-45px,-30px)
+              transform: translate(-40px,-30px)
         .select
           width: 20px
           height: 20px
@@ -165,7 +170,7 @@
           &:checked
             ~ label
               transition: all 0.75s
-              transform: translate(-45px,-30px)
+              transform: translate(-40px,-30px)
         .file
           outline: none
           width: 180px
@@ -174,14 +179,14 @@
           font-size: 15px
           box-sizing: border-box
           padding-top: 5px
-          margin: 15px 0 10px 0
+          margin: 15px 0 8px 0
           margin-left: 20%
           &:valid
             width: 100%
             margin-left: 0px
             + label
               transition: all 0.75s
-              transform: translate(-45px,-30px)
+              transform: translate(-40px,-30px)
       .text-xs-center
         width: 30%
         margin-left: 35%
@@ -190,4 +195,57 @@
         font-size: 20px
         line-height: 1.0
         border: 1px solid #000
+        box-shadow: 10px 10px 10px #707070 !important
+  @media screen and (min-width: 500px)
+    .person
+      padding-top: 20px
+      .title
+        .iconfont
+          font-size: 65px
+        .hr
+          width: 92%
+          h3
+            font-size: 22px
+            line-height: 1
+            font-weight: 400
+            top: -55px
+      .data
+        .input-container
+          width: 20%
+          height: 50px
+          margin-top: 30px
+          margin-bottom: 30px
+          margin-left: 20%
+          font-size: 23px
+          &:nth-of-type(odd)
+            margin-left: 25%
+          &:nth-of-type(even)
+            margin-left: 10%
+  @media screen and (min-width: 300px) and (max-width: 500px)
+    .person
+      padding-top: 30px
+      .title
+        .iconfont
+          font-size: 40px
+        .hr
+          width: 80%
+          h3
+            font-size: 22px
+            line-height: 1
+            font-weight: 400
+            top: -50px
+      .data
+        .input-container
+          width: 70%
+          height: 50px
+          margin-top: 30px
+          margin-bottom: 30px
+          margin-left: 10%
+          font-size: 16px
+          &:nth-of-type(odd)
+            margin-left: 10%
+          &:nth-of-type(even)
+            margin-left: 25%
+        .text-xs-center
+          padding-left: 10px !important
 </style>

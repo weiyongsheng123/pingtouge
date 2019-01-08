@@ -89,18 +89,15 @@ export default {
       width: 94%
       margin-left: 2%
       .iconfont
-        font-size: 65px
         color: #707070
       .hr
         display: inline-block
-        width: 92%
         height: 4px
         background-color: #707070
         position: relative
         h3
           position: absolute
           left: 20px
-          top: -55px
     .classes
       display: block
       width: 100%
@@ -115,9 +112,7 @@ export default {
           list-style: none
           display: block
           float: left
-          width: 20%
           height: 290px
-          margin-left: 4%
           margin-top: 20px
           margin-bottom: 20px
           box-sizing: border-box
@@ -175,6 +170,40 @@ export default {
               font-size: 14px
               font-stretch: 100%
               color: #999
+  @media screen and (min-width: 500px)
+    .head-nav
+      .title
+        .iconfont
+          font-size: 65px
+        .hr
+          width: 92%
+          h3
+            font-size: 22px
+            line-height: 1
+            font-weight: 400
+            top: -55px
+      .classes
+        ul
+          li
+            width: 20%
+            margin-left: 4%
+  @media screen and (min-width: 300px) and (max-width: 500px)
+    .head-nav
+      .title
+        .iconfont
+          font-size: 40px
+        .hr
+          width: 80%
+          h3
+            font-size: 22px
+            line-height: 1
+            font-weight: 400
+            top: -50px
+      .classes
+        ul
+          li
+            width: 90%
+            margin-left: 5%
 </style>
 
 <style scoped>

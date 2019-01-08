@@ -109,17 +109,20 @@ export default {
       const index = Math.floor(Math.random() * 8);
       this.$refs.color.style.color = this.colors[index];
     },
-    showList() {
-      var el = event.currentTarget.lastChild;
+    showList(el) {
+      var el1 = el.currentTarget || el.srcElement;
+      var el = el1.lastChild;
       el.style.display = "block";
     },
-    hideList() {
-      var el = event.currentTarget.lastChild;
+    hideList(el) {
+      var el1 = el.currentTarget || el.srcElement;
+      var el = el1.lastChild;
       el.style.display = "none";
     },
-    alerta() {
+    alerta(el) {
+      var el1 = el.currentTarget || el.srcElement;
       var el =
-        event.currentTarget.parentElement.parentElement.nextElementSibling;
+        el1.parentElement.parentElement.nextElementSibling;
       if (this.isShow) {
         el.style.display = "none";
         this.isShow = false;
